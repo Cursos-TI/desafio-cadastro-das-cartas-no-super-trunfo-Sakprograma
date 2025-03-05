@@ -1,18 +1,16 @@
 #include <stdio.h>
-//Aluno: Lukas Lucena Ferreira
 
 int main (){
 
     char estado, estado2;
     char codigo_carta[05], nome[20], codigo_carta2[05], nome2[20];
     int populacao, turismo, populacao2, turismo2;
-    float area, pib, area2, pib2; //tipos e nomes das variáveis.
+    float area, pib, area2, pib2, densidade_populacao, densidade_populacao2, pib_percapita, pib_percapita2;
 
     printf("Vamos Jogar! Me aprensente dados de duas cidades que representarão cartas no nosso jogo!\n");
     
     printf("Digite uma Letra (De A até H) que representará o primero Estado escolhido: ");
     scanf(" %c", &estado);
-
 
     printf("ÓTIMO! Agora escreve a letra mais um número de 1 a 4 para ser o código carta(ex: H01): ");
     scanf("%s", codigo_carta);
@@ -67,9 +65,14 @@ int main (){
     printf("O código é: %s\n", codigo_carta);
     printf("O nome da cidade é: %s\n", nome);
     printf("A população é: %d\n", populacao);
-    printf("A área dessa cidade é: %f km²\n", area);
-    printf("O pib da cidade é: %f bilhoões de reais\n",pib);
+    printf("A área dessa cidade é: %.2f km²\n", area);
+    printf("O pib da cidade é: %.2f bilhoões de reais\n",pib);
     printf("O número de pontos turísticos é: %d\n", turismo);
+    densidade_populacao = populacao / area;
+    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao);
+    pib_percapita = pib/populacao;
+    printf("O PIB per capital da população é: %.2f \n", pib_percapita);
+
 
     printf("    \n"); //coloquei pela melhor organização de apresentação no terminal
 
@@ -78,9 +81,13 @@ int main (){
     printf("O código é: %s\n", codigo_carta2);
     printf("O nome da cidade é: %s\n", nome2);
     printf("A população é: %d\n", populacao2);
-    printf("A área dessa cidade é: %f km²\n", area2);
-    printf("O pib da cidade é: %f bilhoões de reais\n",pib2);
-    printf("O número de pontos turísticos é: %d", turismo2);
+    printf("A área dessa cidade é: %.2f km²\n", area2);
+    printf("O pib da cidade é: %.2f bilhoões de reais\n",pib2);
+    printf("O número de pontos turísticos é: %d\n", turismo2);
+    densidade_populacao = populacao2 / area2;
+    printf("A densidade populacional é: %.2f hab/km²\n", &densidade_populacao2);
+    pib_percapita2 = pib2/populacao2;
+    printf("O PIB per capital da população é: %.2f\n", pib_percapita2);
 
     return 0; //retorna verdadeiro 
 }
